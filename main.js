@@ -88,7 +88,7 @@ const searchFood = () => {
   searchField.value = "";
 };
 
-allNews("01");
+allNews("08");
 
 const loadNewsDetails = async (id) => {
   const url = `https://openapi.programming-hero.com/api/news/${id}`;
@@ -122,7 +122,8 @@ const displayNewsDetails = (news) => {
                       <p class="card-text">${news.author.published_date}</p>
                   </div>
               </div>
-          
+              <div class="mt-5"><i class="fa fa-light fa-eye"></i>  ${news.total_view}</div>
+
           </div>
         </div>
       </div>
