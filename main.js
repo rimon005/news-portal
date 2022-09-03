@@ -43,7 +43,9 @@ const dispalyNews = (allNews) => {
     <div class="card mb-3">
     <div class="row g-0">
       <div class="col-md-3">
-        <img src="${news.thumbnail_url}" class="img-fluid rounded-start w-100" alt="...">
+        <img src="${
+          news.thumbnail_url
+        }" class="img-fluid rounded-start w-100" alt="...">
       </div>
       <div class="col-md-9 mt-3">
         <div class="card-body">
@@ -52,16 +54,28 @@ const dispalyNews = (allNews) => {
           <div class="d-flex justify-content-between">
             <div class="row g-0">
               <div class="col-md-2 mt-4">
-                  <img src="${news.author.img}"  class="img-fluid rounded-circle " alt="..." width="56" height="56">
+                  <img src="${
+                    news.author.img
+                  }"  class="img-fluid rounded-circle " alt="..." width="56" height="56">
               </div>
               <div class="col-md-10">
                   <div class="card-body">
-                      <h5 class="card-title">${news.author.name}</h5>
-                      <p class="card-text">${news.author.published_date}</p>
+                      <h5 class="card-title">${
+                        news.author.name
+                          ? news.author.name
+                          : "No author name found"
+                      }</h5>
+                      <p class="card-text">${
+                        news.author.published_date
+                          ? news.author.published_date
+                          : " No publsihed date found"
+                      }</p>
                   </div>
               </div>
           </div>
-          <div class="mt-5"><i class="fa fa-light fa-eye"></i>  ${news.total_view}</div>
+          <div class="mt-5"><i class="fa fa-light fa-eye"></i>  ${
+            news.total_view ? news.total_view : "No one has been the post yet"
+          }</div>
           <div class="mt-5">
           <i class="fa fa-light fa-star"></i>
           <i class="fa fa-light fa-star"></i>
@@ -69,7 +83,9 @@ const dispalyNews = (allNews) => {
           <i class="fa fa-light fa-star"></i>
           <i class="fa-solid fa-star-half-stroke"></i>
           </div>
-          <div  class="mt-5"> <i class="fa-sharp fa-solid fa-arrow-right" data-bs-toggle="modal" data-bs-target="#newsDetailsModal" onclick="loadNewsDetails('${news._id}')" ></i></div>
+          <div  class="mt-5"> <i class="fa-sharp fa-solid fa-arrow-right" data-bs-toggle="modal" data-bs-target="#newsDetailsModal" onclick="loadNewsDetails('${
+            news._id
+          }')" ></i></div>
           
           </div>
         </div>
@@ -105,7 +121,9 @@ const displayNewsDetails = (news) => {
   <div class="card mb-3">
     <div class="row g-0">
       <div class="col-md-12">
-        <img src="${news.thumbnail_url}" class="img-fluid rounded-start w-100 h-100" alt="...">
+        <img src="${
+          news.thumbnail_url
+        }" class="img-fluid rounded-start w-100 h-100" alt="...">
       </div>
       <div class="col-md-9 mt-3">
         <div class="card-body">
@@ -114,15 +132,29 @@ const displayNewsDetails = (news) => {
           <div class="d-flex justify-content-between">
             <div class="row g-0">
               <div class="col-md-2 mt-4">
-                  <img src="${news.author.img}"  class="img-fluid rounded-circle " alt="..." width="56" height="56">
+                  <img src="${
+                    news.author.img
+                  }"  class="img-fluid rounded-circle " alt="..." width="56" height="56">
               </div>
               <div class="col-md-10">
                   <div class="card-body">
-                      <h5 class="card-title">${news.author.name}</h5>
-                      <p class="card-text">${news.author.published_date}</p>
+                      <h5 class="card-title">${
+                        news.author.name
+                          ? news.author.name
+                          : "No author name found"
+                      }</h5>
+                      <p class="card-text">${
+                        news.author.published_date
+                          ? news.author.published_date
+                          : " No publsihed date found"
+                      }</p>
                   </div>
               </div>
-              <div class="mt-5"><i class="fa fa-light fa-eye"></i>  ${news.total_view}</div>
+              <div class="mt-5"><i class="fa fa-light fa-eye"></i>  ${
+                news.total_view
+                  ? news.total_view
+                  : "No one has been the post yet"
+              }</div>
 
           </div>
         </div>
