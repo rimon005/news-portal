@@ -15,7 +15,7 @@ const displayCategories = (categories) => {
     const categoryUl = document.createElement("ul");
     categoryUl.innerHTML = `
         <li class="list-unstyled">
-            <a class="text-decoration-none fs-5 fw-bolder" onclick="allNews(${category.category_id})" href="">${category.category_name}</a>
+            <a class="text-decoration-none fs-5 fw-bolder" onclick="allNews('${category.category_id}')" >${category.category_name}</a>
         </li>
     `;
     allCategories.appendChild(categoryUl);
@@ -43,7 +43,7 @@ const dispalyNews = (allNews) => {
     <div class="card mb-3">
     <div class="row g-0">
       <div class="col-md-3">
-        <img src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="...">
+        <img src="${news.thumbnail_url}" class="img-fluid rounded-start w-100" alt="...">
       </div>
       <div class="col-md-9 mt-3">
         <div class="card-body">
