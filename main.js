@@ -43,9 +43,14 @@ const allNews = (newsCategory) => {
 };
 
 const dispalyNews = (allNews) => {
-  // console.log(allNews);
+  console.log(allNews);
   const newsContainer = document.getElementById("news-container");
   newsContainer.innerHTML = "";
+  const searchTotal = document.getElementById("toral-search-field");
+  searchTotal.innerHTML = `
+  <h4 class="border border-info p-2 w-50">${allNews.length} items found for category</h4>
+   `;
+
   allNews.forEach((news) => {
     // console.log(news);
     const newsDiv = document.createElement("div");
@@ -106,13 +111,6 @@ const dispalyNews = (allNews) => {
     newsContainer.appendChild(newsDiv);
   });
   toggleSpinner(false);
-};
-
-const searchFood = () => {
-  const searchField = document.getElementById("search-field");
-  const searchText = searchField.value;
-  allNews(searchText);
-  searchField.value = "";
 };
 
 allNews("08");
