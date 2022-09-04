@@ -23,7 +23,17 @@ const displayCategories = (categories) => {
 };
 newCategory();
 
+const toggleSpinner = (isLoading) => {
+  const loadingSection = document.getElementById("spinners");
+  if (isLoading) {
+    loadingSection.classList.remove("d-none");
+  } else {
+    loadingSection.classList.add("d-none");
+  }
+};
+
 const allNews = (newsCategory) => {
+  toggleSpinner(true);
   const newsUrl = `https://openapi.programming-hero.com/api/news/category/${newsCategory}`;
   // fetch(`https://openapi.programming-hero.com/api/news/category/08`);
   // console.log(newsUrl);
@@ -95,6 +105,7 @@ const dispalyNews = (allNews) => {
     `;
     newsContainer.appendChild(newsDiv);
   });
+  toggleSpinner(false);
 };
 
 const searchFood = () => {
