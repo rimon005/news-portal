@@ -51,6 +51,12 @@ const dispalyNews = (allNews) => {
   <h4 class="border border-info p-2 w-50">${allNews.length} items found for category</h4>
    `;
 
+  const noNewsFound = document.getElementById("no-news-message");
+  if (allNews.length === 0) {
+    noNewsFound.classList.remove("d-none");
+  } else {
+    noNewsFound.classList.add("d-none");
+  }
   allNews.forEach((news) => {
     // console.log(news);
     const newsDiv = document.createElement("div");
