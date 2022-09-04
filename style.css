@@ -5,3 +5,7 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+
+.footer{
+    height: 100px;
+}
